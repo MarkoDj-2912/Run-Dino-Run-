@@ -1,0 +1,33 @@
+# Unity core
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Oo]bj/
+[Mm]emoryCaptures/
+UserSettings/
+sysinfo.txt
+
+# Rider/VS/VSCode
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.mdb
+*.opendb
+*.VC.db
+*.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Crash/Reports
+*.stacktrace

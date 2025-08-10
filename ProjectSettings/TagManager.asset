@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Damage
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Obstacle
+  - Coin
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 1Back sky
+    uniqueID: 3842086123
+    locked: 0
+  - name: 4Sun
+    uniqueID: 1047914725
+    locked: 0
+  - name: 2Back mountain
+    uniqueID: 4275776689
+    locked: 0
+  - name: 3Back hill
+    uniqueID: 4228081507
+    locked: 0
+  - name: Player
+    uniqueID: 2396734459
+    locked: 0
+  - name: 5Cactus
+    uniqueID: 2964844329
+    locked: 0
+  - name: Coin
+    uniqueID: 1959238623
+    locked: 0
+  - name: UI
+    uniqueID: 3187730767
+    locked: 0
+  m_RenderingLayers:
+  - Default
