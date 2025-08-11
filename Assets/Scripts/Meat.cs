@@ -20,7 +20,6 @@ public class Meat : MonoBehaviour
         if (p) player = p.transform;
         cam = Camera.main;
 
-        // failsafe: ako je mesto zauzeto obstacle-om (kaktus), pomeri malo napred
         var mask = LayerMask.GetMask("Obstacle");
         Vector3 pos = transform.position;
         int tries = 0;

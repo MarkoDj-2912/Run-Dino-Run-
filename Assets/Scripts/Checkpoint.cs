@@ -41,6 +41,8 @@ public class Checkpoint : MonoBehaviour
         {
             player.coins = 0;
             currentRequired = Mathf.Min(currentRequired + 1, 10);
+
+            if (groundSource) groundSource.BumpSpeed();
         }
     }
 }

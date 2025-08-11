@@ -1,4 +1,4 @@
-using System;                 // <— zbog Action
+using System;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -6,13 +6,13 @@ public class ScoreManager : MonoBehaviour
     public static int runCoins { get; private set; }
     public static int bestRunCoins { get; private set; }
 
-    public static event Action<int,int> CoinsChanged; // run,best
+    public static event Action<int,int> CoinsChanged;
 
     void Awake()
     {
         runCoins = 0;
         bestRunCoins = PlayerPrefs.GetInt("BestRunCoins", 0);
-        CoinsChanged?.Invoke(runCoins, bestRunCoins); // init HUD-a
+        CoinsChanged?.Invoke(runCoins, bestRunCoins);
     }
 
     public static void AddCoin(int v = 1)
@@ -26,6 +26,6 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
-        CoinsChanged?.Invoke(runCoins, bestRunCoins); // obavesti HUD
+        CoinsChanged?.Invoke(runCoins, bestRunCoins);
     }
 }

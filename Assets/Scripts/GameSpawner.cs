@@ -167,7 +167,6 @@ bool SpawnMeat()
     float camX = CamX();
     float minX = camX + spawnAhead;
 
-    // razmaci prema poslednjim postavljenim
     minX = Mathf.Max(minX, lastMeatX       + minMeatSpacing);
     minX = Mathf.Max(minX, lastCactusX     + minMeatToCactus);
     minX = Mathf.Max(minX, lastCheckpointX + minMeatToCheckpoint);
@@ -180,10 +179,8 @@ bool SpawnMeat()
     int tries = 0;
     while (tries < maxAdjustTries)
     {
-        // osnovni sudar
         bool blocked = Physics2D.OverlapBox(pos, meatCheckSize, 0f, obstacleMask);
 
-        // prošireni “clearance” po X — NEMA blizine kaktusa
         Vector2 clearance = new Vector2(meatCheckSize.x + minMeatToCactus, meatCheckSize.y);
         bool tooClose = Physics2D.OverlapBox(pos, clearance, 0f, obstacleMask);
 
@@ -193,9 +190,6 @@ bool SpawnMeat()
         if (pos.x > maxX) return false;
         tries++;
     }
-
-    // ukidamo “lift near cactus” da ne bi ikad bio iznad kaktusa
-    // if (pos.x < lastCactusX + (minMeatToCactus + 1f)) pos.y = meatYOffset + meatLiftNearCactus;
 
     Instantiate(meatPrefab, pos, Quaternion.identity);
     lastMeatX = pos.x;
@@ -208,12 +202,11 @@ bool SpawnMeat()
         float startX = camX + spawnAhead;
         float maxX   = camX + spawnAhead + maxExtraAhead;
 
-        if (startX > maxX) return false; // no window this frame
+        if (startX > maxX) return false;
 
         int count = Random.Range(coinGroupMin, coinGroupMax + 1);
         float y = Random.Range(coinYMin, coinYMax);
 
-        // spawn coins; if group goes past window it's fine—rest will slide in
         for (int i = 0; i < count; i++)
         {
             Vector3 pos = new Vector3(startX + i * coinGroupSpacing, y, 0f);
@@ -223,11 +216,9 @@ bool SpawnMeat()
         return true;
     }
 
-    // (Optional) Gizmos to visualize safety boxes
     void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1, 0, 0, 0.25f);
-        // just draw sizes at an example position to preview box sizes
         Gizmos.DrawWireCube(new Vector3(CamX() + spawnAhead, meatYOffset, 0f), meatCheckSize);
         Gizmos.color = new Color(0, 1, 0, 0.25f);
         Gizmos.DrawWireCube(new Vector3(CamX() + spawnAhead, groundY, 0f), cactusCheckSize);
