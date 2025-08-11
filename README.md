@@ -1,4 +1,4 @@
-# 🦖 Dino Desert Run
+# 🦖 Run Dino Run
 
 Endless Runner game made for **Two Desperados Game Jam 2025**.  
 **Theme:** *Three Rules*
