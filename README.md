@@ -53,3 +53,7 @@ The game speeds up over time, making it harder to react.
 1. Clone this repository:
    ```bash
    git clone https://github.com/MarkoDj-2912/Run-Dino-Run-
+
+2.Open the project in Unity 6.1.15f1.
+3.Open the scene GameScene and press Play.
+
